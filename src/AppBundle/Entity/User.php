@@ -2,19 +2,32 @@
 
 namespace AppBundle\Entity;
 
-
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="user")
+ */
 class User
 {
-    /** @var  int */
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
-    /** @var  string */
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
     private $pseudo;
 
-    /** @var  string */
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
     private $password;
 
-    /** @var  string */
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
     private $avatar;
 
 

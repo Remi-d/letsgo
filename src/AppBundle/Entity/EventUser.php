@@ -8,17 +8,27 @@
 
 namespace AppBundle\Entity;
 
-
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="event_user")
+ */
 class EventUser
 {
-    /** @var  int */
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $idEvent;
 
-    /** @var  int */
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $idUser;
 
-    /** @var  bool */
+    /**
+     * @ORM\Column(type="boolean")
+     */
     private $accept;
+
 
     /**
      * @return int

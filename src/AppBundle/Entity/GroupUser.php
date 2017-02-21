@@ -8,14 +8,23 @@
 
 namespace AppBundle\Entity;
 
-
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="squad_user")
+ */
 class GroupUser
 {
-    /** @var  int */
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $idGroup;
 
-    /** @var  int */
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $idUser;
+
+
 
     /**
      * @return int

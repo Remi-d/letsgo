@@ -5,23 +5,38 @@ namespace AppBundle\Entity;
 
 use Symfony\Component\Validator\Constraints\DateTime;
 
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="event")
+ */
 class Event
 {
-    /** @var  int */
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
-    /** @var  string */
-    private $game;
+    /**
+     * @ORM\Column(type="string", length=40)
+     */
+    private $event;
 
-    /** @var  string */
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
     private $location;
 
-    /** @var  DateTime */
+    /**
+     * @ORM\Column(type="datetime")
+     */
     private $start_date;
 
-    /** @var  DateTime */
+    /**
+     * @ORM\Column(type="datetime")
+     */
     private $creation_date;
-
 
 
     /**
@@ -35,18 +50,18 @@ class Event
     /**
      * @return string
      */
-    public function getGame()
+    public function getEvent()
     {
-        return $this->game;
+        return $this->event;
     }
 
     /**
-     * @param string $game
+     * @param string $event
      * @return Event
      */
-    public function setGame($game)
+    public function setevent($event)
     {
-        $this->game = $game;
+        $this->event = $event;
         return $this;
     }
 

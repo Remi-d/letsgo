@@ -8,14 +8,28 @@
 
 namespace AppBundle\Entity;
 
-
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="squad")
+ */
 class Group
 {
-    /** @var  int */
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
-    /** @var  string */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $name;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $idOwner;
 
     /**
      * @return int
@@ -40,6 +54,24 @@ class Group
     public function setName($name)
     {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdOwner()
+    {
+        return $this->idOwner;
+    }
+
+    /**
+     * @param int $idOwner
+     * @return Group
+     */
+    public function setIdOwner($idOwner)
+    {
+        $this->idOwner = $idOwner;
         return $this;
     }
 
