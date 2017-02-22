@@ -9,9 +9,17 @@ class UserController extends FOSRestController
 {
     public function getUserAction()
     {
-        $users = ['Remi', 'Raisin', 'Tabzac'];
+        $userService = $this->get('user_service');
+        $users = $userService->getUserByName('Remi');
+
         $view = $this->view($users, 200);
 
         return $this->handleView($view);
+    }
+
+    public function createNewUserAction()
+    {
+        $userService = $this->get('user_service');
+        $users = $userService->getUserByName('Remi');
     }
 }

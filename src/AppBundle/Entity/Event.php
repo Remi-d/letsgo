@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 
 use Symfony\Component\Validator\Constraints\DateTime;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
